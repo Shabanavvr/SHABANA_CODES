@@ -1,0 +1,30 @@
+// queue operations
+import java.util.HashMap;
+
+class Solution {
+    public int firstUniqChar(String s) {
+        HashMap<Character, Integer> frequencyMap = new HashMap<>();
+
+        // Count the frequency of each character in the string
+        for (char ch : s.toCharArray()) {
+            frequencyMap.put(ch, frequencyMap.getOrDefault(ch, 0) + 1);
+        }
+
+        // Find the first unique character with frequency 1
+        for (int i = 0; i < s.length(); i++) {
+            if (frequencyMap.get(s.charAt(i)) == 1) {
+                return i;
+            }
+        }
+
+        return -1; // Return -1 if no unique character is found
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        String input = "leetcode";
+        int index = solution.firstUniqChar(input);
+        System.out.println("Index of first unique character: " + index);
+    }
+}
+// started to gfg
