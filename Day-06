@@ -1,1 +1,14 @@
 // some spring boot framework
+
+package course;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringApplication;
+
+@SpringBootApplication
+class CourseApiApp {
+    public static void main(String[] args) {
+        SpringApplication.run(CourseApiApp.class, args);
+    }
+}
+
