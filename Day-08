@@ -1,0 +1,59 @@
+// code in gfg about the buy and sell
+import java.util.ArrayList;
+
+class Solution {
+    // Function to find the days of buying and selling stock for max profit.
+    ArrayList<ArrayList<Integer>> stockBuySell(int A[], int n) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+
+        if (n <= 1) {
+            return result; // No profit possible with 0 or 1 day
+        }
+
+        int buyIndex = -1;
+        int sellIndex = -1;
+        int maxProfit = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            if (A[i] < A[i + 1]) {
+                // Found a potential buying opportunity
+                if (buyIndex == -1) {
+                    buyIndex = i;
+                }
+            } else if (A[i] > A[i + 1]) {
+                // Found a potential selling opportunity
+                if (buyIndex != -1) {
+                    sellIndex = i;
+                    int profit = A[sellIndex] - A[buyIndex];
+                    if (profit > 0) {
+                        ArrayList<Integer> segment = new ArrayList<>();
+                        segment.add(buyIndex);
+                        segment.add(sellIndex);
+                        result.add(segment);
+                        maxProfit += profit;
+                    }
+                    buyIndex = -1; // Reset buyIndex after selling
+                }
+            }
+        }
+
+        // Handle the case where the last day is a potential selling opportunity
+        if (buyIndex != -1 && A[n - 1] > A[buyIndex]) {
+            sellIndex = n - 1;
+            int profit = A[sellIndex] - A[buyIndex];
+            if (profit > 0) {
+                ArrayList<Integer> segment = new ArrayList<>();
+                segment.add(buyIndex);
+                segment.add(sellIndex);
+                result.add(segment);
+                maxProfit += profit;
+            }
+        }
+
+        if (maxProfit == 0) {
+            result.clear(); // No profit, so clear the result list
+        }
+
+        return result;
+    }
+}
