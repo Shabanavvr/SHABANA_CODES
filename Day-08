@@ -57,3 +57,45 @@ class Solution {
         return result;
     }
 }
+// duplicat arrays
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) {
+            return 0; // Empty array, no duplicates
+        }
+
+        int slowPointer = 1; // Start from the second element
+        for (int fastPointer = 1; fastPointer < nums.length; fastPointer++) {
+            // If the current element is different from the previous element,
+            // move it to the slowPointer position and increment slowPointer
+            if (nums[fastPointer] != nums[fastPointer - 1]) {
+                nums[slowPointer] = nums[fastPointer];
+                slowPointer++;
+            }
+        }
+
+        return slowPointer; // Return the number of unique elements
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        int[] nums1 = {1, 1, 2};
+        int k1 = solution.removeDuplicates(nums1);
+        System.out.println("Output for nums1: " + k1);
+        // Print nums1 to verify
+        for (int i = 0; i < k1; i++) {
+            System.out.print(nums1[i] + " ");
+        }
+        System.out.println();
+
+        int[] nums2 = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        int k2 = solution.removeDuplicates(nums2);
+        System.out.println("Output for nums2: " + k2);
+        // Print nums2 to verify
+        for (int i = 0; i < k2; i++) {
+            System.out.print(nums2[i] + " ");
+        }
+        System.out.println();
+    }
+}
