@@ -1,0 +1,33 @@
+// did dsa prolme on leetcode
+//python done
+class Solution {
+    public int[] plusOne(int[] digits) {
+        int n = digits.length;
+        
+        // Adding 1 to the last digit and handling carry
+        for (int i = n - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits; // No carry, return the modified array
+            } else {
+                digits[i] = 0; // Set the current digit to 0 and continue the loop
+            }
+        }
+        
+        // If we reach here, it means all digits were 9, so we need to add a new leading 1
+        int[] result = new int[n + 1];
+        result[0] = 1; // Set the first digit to 1
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[] digits = {1, 2, 3};
+        int[] result = sol.plusOne(digits);
+        
+        // Printing the result array
+        for (int digit : result) {
+            System.out.print(digit + " ");
+        }
+    }
+}
