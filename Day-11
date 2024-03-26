@@ -3,7 +3,6 @@ int[] a = {1, 2, 3, 4, 5};
 int[] b = {1, 2, 3};
 
 HashSet<Integer> unionSet = new HashSet<>();
-
 for (int num : a) {
     unionSet.add(num);
 }
