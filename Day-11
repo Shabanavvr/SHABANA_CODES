@@ -1,0 +1,33 @@
+//gfg union of sets
+int[] a = {1, 2, 3, 4, 5};
+int[] b = {1, 2, 3};
+
+HashSet<Integer> unionSet = new HashSet<>();
+
+for (int num : a) {
+    unionSet.add(num);
+}
+
+for (int num : b) {
+    unionSet.add(num);
+}
+
+int unionSize = unionSet.size();
+System.out.println("Number of elements in union: " + unionSize)
+// remove duplicates
+class Solution {
+    public int removeDuplicates(int[] nums) {
+         int j=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==nums[j]){
+                continue;
+            }
+            j++;
+            nums[j]=nums[i];
+        }
+        return ++j;
+
+
+    }
+        
+    }
