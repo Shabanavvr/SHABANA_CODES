@@ -1,0 +1,13 @@
+// scalar master class on collection framework:
+*List
+-arraylist
+-linkedlist
+-vector-stack
+*set
+-hashset
+-linkedhashset
+-treeset
+*queue
+-Priorityq
+-dqueue
+// django brush up
