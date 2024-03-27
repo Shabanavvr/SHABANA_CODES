@@ -12,3 +12,30 @@
 -dqueue
 // django brush up
 
+// anagram gfg
+class Solution {
+
+  // Function to check whether two strings are anagram of each other or not.
+  public static boolean isAnagram(String a, String b) {
+    if (a.length() != b.length()) {
+      return false; // Different lengths cannot be anagrams
+    }
+
+    int[] charCount = new int[256]; // Assuming all characters are lowercase
+
+    // Count occurrences of characters in string 'a'
+    for (char c : a.toCharArray()) {
+      charCount[c]++;
+    }
+
+    // Check if characters in string 'b' have the same frequency as in 'a'
+    for (char c : b.toCharArray()) {
+      if (charCount[c] == 0) {
+        return false; // Character not found in 'a' or exhausted
+      }
+      charCount[c]--;
+    }
+
+    return true; // All characters matched
+  }
+}
