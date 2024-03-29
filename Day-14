@@ -1,0 +1,11 @@
+// array of methods
+// functions static and instance method
+static methods: need not require an object to call
+non-static method:needs to create an object to create and have acess to 
+// dom strcture:
+window deom
+document dom
+form dom
+form control dom
+//dom types
+legacy,w3c,IE4
