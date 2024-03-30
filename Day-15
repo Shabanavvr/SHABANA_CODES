@@ -80,6 +80,28 @@ class Solution {
 it has som of the concepts behinds:
 
 
-
+EXPLANATION
+Divisibility by 9 Rule:
+Any number whose digits add up to 9 is divisible by 9.
+Examples include 18, 27, 36, 45, 54, 63, 72, 81, 90, etc.
+Digital Root for Divisible by 9 Numbers:
+The digital root (sum of digits until a single digit is obtained) for any number divisible by 9 is always 9.
+Example: For 99, 9 + 9 = 18, and 1 + 8 = 9, confirming the digital root is always 9.
+Digital Root for 0:
+The digital root of 0 is always 0.
+Digital Root for Other Numbers:
+For numbers that aren't 0 and aren't divisible by 9, the digital root is obtained by taking the number modulo 9.
+Formula: Digital Root = n mod 9
+Examples of Modulo 9 Calculation:
+100 mod 9 = 1 (one greater than 99, which is divisible by 9).
+101 mod 9 = 2
+102 mod 9 = 3 and so on
+Optimizing the Digital Root Calculation:
+This method avoids the traditional approach of repeatedly adding digits until only one digit remains.
+It provides a more efficient way to find the digital root, especially for larger numbers.
+LeetCode Perspective:
+Acknowledges that understanding and applying such mathematical tricks is a valuable skill in solving problems on platforms like LeetCode.
+Emphasizes that the given explanation may seem unrelated to the traditional method but showcases the importance of different problem-solving approaches and mathematical insights.
+Remember, these points collectively highlight the mathematical principles behind the digital root calculation, providing a concise and clear understanding of the process
 
 
