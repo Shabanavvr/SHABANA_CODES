@@ -4,3 +4,9 @@ for(int j=0;j<n;j++)
 print(*) 
 }
 print(*) 
+//C#
+c#, F#
+Program stmt:
+public sttic void main(String[] arts) 
+Console. Write("Hello World")! 
+Console. read();
