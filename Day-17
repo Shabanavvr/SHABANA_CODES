@@ -11,7 +11,7 @@ public sttic void main(String[] arts)
 Console. Write("Hello World")! 
 Console. read();
 //learnt some error 
-handling
+handling when finally block is there it is printed no matter wat
 
 
 
