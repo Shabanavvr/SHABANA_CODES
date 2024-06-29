@@ -1,1 +1,33 @@
+
+
+
 // c#
+using System;
+
+namespace HelloWorldApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+
+            // Create an instance of the Greeter class
+            Greeter greeter = new Greeter();
+
+            // Ask for user's name and greet the user
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
+            greeter.Greet(name);
+        }
+    }
+
+    // A simple class to greet the user
+    class Greeter
+    {
+        public void Greet(string name)
+        {
+            Console.WriteLine($"Hello, {name}!");
+        }
+    }
+}
